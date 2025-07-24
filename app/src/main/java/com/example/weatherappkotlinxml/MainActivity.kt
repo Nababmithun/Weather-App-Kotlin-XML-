@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         // Observe data
         viewModel.weather.observe(this) { data ->
             findViewById<TextView>(R.id.temperatureText).text = "${data.temperature}°C"
-
+            findViewById<TextView>(R.id.descriptionText).text = data.description
+            findViewById<TextView>(R.id.humidityText).text = "Humidity: ${data.humidity}%"
+            findViewById<TextView>(R.id.windText).text = "Wind: ${data.windSpeed} m/s"
         }
 
         // Search button
